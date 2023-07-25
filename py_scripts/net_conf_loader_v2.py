@@ -4,9 +4,10 @@ import os
 import yaml
 from jinja2 import Environment, FileSystemLoader
 from netmiko import Netmiko, NetmikoBaseException
+from concurrent.futures import ThreadPoolExecutor
 from paramiko.ssh_exception import SSHException
 from isis_net_converting import isis_net
-from concurrent.futures import ThreadPoolExecutor
+from pprint import pprint
 
 def yaml_load(filename):
     with open(filename) as f:
@@ -52,7 +53,7 @@ def send_config_commands_to_devices(devices, config_commands, save_conf=False, l
     return results
 
 if __name__ == '__main__':
-    template_file = "/Users/mac-alex/Documents/NET_automation/templates/eos/eos_conf.j2"
+    template_file = "/Users/mac-alex/Documents/NET_automation/templates/eos/run_conf.j2"
     conf_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/conf_eos.yml")
     conn_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/devices_eos.yml")
 
