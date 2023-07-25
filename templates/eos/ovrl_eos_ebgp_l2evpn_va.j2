@@ -29,7 +29,7 @@ interface Vxlan1
   neighbor SPINE_OVERLAY activate
 
 {% for neib in device_params.bgp_neighbor_ovl %}
-  neighbor {{ neib }} peer group SPINE_OVERLAYY
+  neighbor {{ neib }} peer group SPINE_OVERLAY
 
 {% endfor %}
 {% endif %}
