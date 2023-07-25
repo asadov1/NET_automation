@@ -8,10 +8,8 @@ interface Vxlan1
   bgp listen range {{ device_params.prefix_ovl }} peer-group LEAF_OVERLAY peer-filter {{ device_params.asn_range }}
   neighbor LEAF_OVERLAY peer group
   neighbor LEAF_OVERLAY update-source Loopback0
-  neighbor LEAF_OVERLAY ebgp-multihop
+  neighbor LEAF_OVERLAY ebgp-multihop {{ device_params.multihop }}
   neighbor LEAF_OVERLAY send-community
-  neighbor LEAF_OVERLAY peer group
-  neighbor LEAF_OVERLAY ebgp-multihop 2
   address-family evpn
   neighbor LEAF_OVERLAY activate
 

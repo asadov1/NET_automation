@@ -52,9 +52,9 @@ def send_config_commands_to_devices(devices, config_commands, save_conf=False, l
     return results
 
 if __name__ == '__main__':
-    template_file = "templates/eos/eos_conf.j2"
-    conf_params = yaml_load("data_files/conf_eos.yml")
-    conn_params = yaml_load("data_files/devices_eos.yml")
+    template_file = "/Users/mac-alex/Documents/NET_automation/templates/eos/eos_conf.j2"
+    conf_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/conf_eos.yml")
+    conn_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/devices_eos.yml")
 
     devices_configs = []
     for device in conn_params:
