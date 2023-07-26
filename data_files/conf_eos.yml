@@ -46,6 +46,8 @@ devices:
     vrf_name: SERVICE_1
     svi_ip:
       vlan21: 10.11.1.254/24
+      vlan22: 10.11.2.254/24
+      vlan23: 10.11.3.254/24
     int_num:
       Eth1: 10.10.1.0/31
       Eth2: 10.10.2.0/31
@@ -73,6 +75,7 @@ devices:
     vmac: 00:00:22:22:33:33
     vrf_name: SERVICE_1
     svi_ip:
+      vlan21: 10.11.1.254/24
       vlan22: 10.11.2.254/24
       vlan23: 10.11.3.254/24
     int_num:
@@ -88,7 +91,6 @@ devices:
       - 10.8.0.1
     vlans_bgp:
       - 22
-      - 23
 #
   192.168.254.59:
     hostname: leaf3
@@ -103,6 +105,7 @@ devices:
     vrf_name: SERVICE_1
     svi_ip:
       vlan21: 10.11.1.254/24
+      vlan22: 10.11.2.254/24
       vlan23: 10.11.3.254/24
     int_num:
       Eth1: 10.10.1.4/31
@@ -116,5 +119,4 @@ devices:
       - 10.8.0.0
       - 10.8.0.1
     vlans_bgp:
-      - 21
       - 23
