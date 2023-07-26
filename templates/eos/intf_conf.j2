@@ -1,10 +1,9 @@
 vlan {{ device_params.vlan }}
-no interface Vxlan1
 
 {% for intf, ip in device_params.int_num.items() %}
 default interface {{ intf }}
-interface {{ intf }}
 
+interface {{ intf }}
 {% if 'Eth' in intf %}
 no switchport
 mtu 9214

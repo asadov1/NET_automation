@@ -9,6 +9,7 @@ from paramiko.ssh_exception import SSHException
 from isis_net_converting import isis_net
 from pprint import pprint
 
+
 def yaml_load(filename):
     with open(filename) as f:
         output = yaml.safe_load(f)
@@ -53,9 +54,9 @@ def send_config_commands_to_devices(devices, config_commands, save_conf=False, l
     return results
 
 if __name__ == '__main__':
-    template_file = "/Users/mac-alex/Documents/NET_automation/templates/eos/run_conf.j2"
-    conf_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/conf_eos.yml")
-    conn_params = yaml_load("/Users/mac-alex/Documents/NET_automation/data_files/devices_eos.yml")
+    template_file = "templates/eos/run_conf.j2"
+    conf_params = yaml_load("data_files/conf_eos.yml")
+    conn_params = yaml_load("data_files/devices_eos.yml")
 
     devices_configs = []
     for device in conn_params:
@@ -64,4 +65,5 @@ if __name__ == '__main__':
                                       {"device_params": conf_params['devices'][device_ip]}).split('\n')
         devices_configs.append(device_conf)
 
-    print(send_config_commands_to_devices(conn_params, devices_configs))
+    result = send_config_commands_to_devices(conn_params, devices_configs)
+    pprint(result)
