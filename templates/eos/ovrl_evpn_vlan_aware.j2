@@ -3,4 +3,3 @@ rd {{ device_params.int_num['Lo0'].split('/')[0] }}:{{ device_params.RT }}
 route-target both 1:{{ device_params.RT }}
 redistribute learned
 vlan add {{ device_params.vlan }}
-

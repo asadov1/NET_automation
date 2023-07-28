@@ -2,6 +2,6 @@
   interface Vxlan1
   vxlan source-interface Loopback1
   vxlan udp-port 4789
-  vxlan vlan {{ device_params.vlan }} vni {{ device_params.vni }}
+  vxlan vlan add {{ device_params.vlan }} vni {{ device_params.vni }}
 
  {% endif %}
