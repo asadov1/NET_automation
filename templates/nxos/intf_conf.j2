@@ -10,5 +10,6 @@ no shutdown
 {% elif 'Lo' in intf %}
 ip address {{ ip }}
 no shutdown
+shutdown
 {% endif %}
 {% endfor %}
