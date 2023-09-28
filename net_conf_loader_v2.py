@@ -37,7 +37,7 @@ def send_config_commands(device, config_commands, save_conf=True):
     except (NetmikoBaseException, SSHException) as error:
         print(f"Failed to execute command due to error: {error}")
 
-def send_config_commands_to_devices(devices, config_commands, save_conf=False, limit=10):
+def send_config_commands_to_devices(devices, config_commands, save_conf=True, limit=10):
     with ThreadPoolExecutor(max_workers=limit) as executor:
         futures = []
         for device, command in zip(devices, config_commands):
